@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-//const util = require("util");
+const util = require("util");
 
 // array of questions for user
 const questions = [
@@ -35,6 +35,7 @@ const questions = [
         message: "What license should this be attributed too?",
         choices: [
             "MIT License",
+            "Apache License",
             "Public unlicensed" 
         ]},
     {
@@ -60,59 +61,59 @@ console.clear();
     //function writeToFile(fileName, data) {
     //}
 
-inquirer
-    .prompt(questions).then(response => {
+inquirer.prompt(questions).then(response => {
 
     fs.appendFileSync("README.md", ("# " + response.title) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
-        console.log("Success");
+        console.log("done");
     });
 
-    fs.appendFileSync("README.md", ("## Description") + response.description) + '\n', function(err) {
+    fs.appendFileSync("README.md", ("## Description" + '\n' + response.description) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
         console.log("done");
     });
 
-    fs.appendFileSync("README.md", ("## Table of Contents") + '\n' + '- ' + response.toc.split(", ").join('\n', + '- ', function(err) {
+    fs.appendFileSync("README.md", ("## Table of Contents" + '\n' + '- ' + response.toc.split(", ").
+    join('\n' + '- ')) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
         console.log("done");
     });
 
-    fs.appendFileSync("README.md", ("## Install Instructions") + '\n' + response.installation) + '\n', function(err) {
+    fs.appendFileSync("README.md", ("## Install Instructions" + '\n' + response.installation) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
         console.log("done");
     });
 
-    fs.appendFileSync("README.md", ("## Usage") + '\n' + response.usage) + '\n', function(err) {
+    fs.appendFileSync("README.md", ("## Usage" + '\n' + response.usage) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
         console.log("done");
     });
 
-    fs.appendFileSync("README.md", ("## License") + '\n' + response.license) + '\n', function(err) {
+    fs.appendFileSync("README.md", ("## License" + '\n' + response.license) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
         console.log("done");
     });
 
-    fs.appendFileSync("README.md", ("## How to Contribute") + '\n' + response.contributing) + '\n', function(err) {
+    fs.appendFileSync("README.md", ("## How to Contribute" + '\n' + response.contributing) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
         console.log("done");
     });
 
-    fs.appendFileSync("README.md", ("## How to run tests") + '\n' + response.tests) + '\n', function(err)) {
+    fs.appendFileSync("README.md", ("## How to run tests" + '\n' + response.tests) + '\n', function(err) {
         if (err) {
             return console.log(err);
         }
