@@ -42,6 +42,7 @@ function promptUser() {
                 "LGPL v3",
                 "Mozilla Public License Version 2.0",
                 "Public Domain (Unlicense)",
+                "MIT License"
             ]},
         {
             type: "input",
@@ -69,17 +70,15 @@ function writeReadMe(response) {
 
 # Table of Contents
 
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Test](#test)
-- [Credits](#credits)
-- [Questions](#questions)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Test](#test)
+* [Questions](#questions)
 
 # Description:
-${response.license}
 ${response.description}
 
 # Installation:
@@ -89,20 +88,19 @@ ${response.installation}
 ${response.usage}
 
 # License:
-    Click the link below for more information
-    - [License](https://opensource.org/licenses/${response.license})
+* ${response.license}
 
 # Contributing:
 ${response.contributing}
 
 # Test:
-    Once installed, issue 'npm run test' in terminal
+Once installed, issue 'npm run test' in terminal
 
 # Questions:
-    Please visit my github page or e-mail me directly to contact me about this project
-    - [github](https://github/com/${response.githubusername})
-    - ${response.email}
-    `;
+Please visit my github page or e-mail me directly to contact me about this project
+* [${response.githubusername}](https://github.com/${response.githubusername})
+* <${response.email}>
+`;
 }
 
 // function to initialize program
@@ -121,3 +119,8 @@ async function init() {
 
 // function call to initialize program
 init();
+
+
+// attempt at linking to site for license - didn't work
+    //Click the link below for more information
+    //* [License](https://opensource.org/licenses/${encodeURI(response.license)})
