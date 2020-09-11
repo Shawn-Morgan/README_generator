@@ -4,7 +4,7 @@ This project provides the basic scaffold for generating a generic README.md file
 
 ## Links
 * [Walk-through video](<iframe src="https://drive.google.com/file/d/1VI2xffD8T0i9z_5-jzXTzPm6d4xY6rsP/preview" width="640" height="480"></iframe>)
-* [Sample generated README.md](...)
+* [Sample generated README.md](https://github.com/Shawn-Morgan/README_generator/blob/master/Develop/README.md)
 * [Github Repo for project](https://github.com/Shawn-Morgan/README_generator)
 
 ## Project Features
